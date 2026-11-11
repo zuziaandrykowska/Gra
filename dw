@@ -1,0 +1,39 @@
+ekwipunek = {"miecz": 1, "mikstura": 3, "zloto": 50}
+menu = True
+while menu:
+    print("1./n Pokaz przedmioty")
+    print("2./n Dodaj przedmioty")
+    print("3./n Uzyj przedmiotu")
+    print("4. /n Sprawdz przedmiot")
+    print("5. /n Wyjdz")
+    wybor = int(input("Wybierz liczbe od 1-5:"))
+
+    if wybor == 1:
+        print("twoje przedmioty:", ekwipunek)
+
+    elif wybor == 2:
+        przedmiot = input("Nazwa przedmiotu:")
+        if przedmiot in ekwipunek:
+            ekwipunek[przedmiot] += 1
+            print(ekwipunek)
+        else:
+            ekwipunek[przedmiot] = 1
+            print(ekwipunek)
+
+    elif wybor == 3:
+        przedmiot = input("Jakiego przedmiotu chcesz uzyc:")
+        if przedmiot in ekwipunek:
+            ekwipunek[przedmiot] -= 1
+            print("Wykorzystano przedmiot")
+            if ekwipunek[przedmiot] == 0:
+                del ekwipunek[przedmiot]
+                print("Przedmiot sie skonczyl")
+    elif wybor == 4:
+        przedmiot = input("Wpisz przedmiot:")
+        if przedmiot in ekwipunek:
+            print(ekwipunek[przedmiot])
+        else:
+            print("Nie ma takiego przedmiotu")
+
+    elif wybor == 5:
+        menu = False
